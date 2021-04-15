@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MDwnBk1trLuXWFZjYjGEjYUlKFJQugKOLr+co/OXKdd98MJ+RvOMMvN84EynH1lGDsriKxT340/+yagkZ+fH7Q==",
+  "success": true,
+  "projectFilePath": "H:\\Level 5\\Sem2\\Advanced Programming\\Task 3\\HashSearchDwellings\\HashSearchDwellings.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Debbie\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.14\\microsoft.netcore.app.host.win-x64.3.1.14.nupkg.sha512"
+  ],
+  "logs": []
+}

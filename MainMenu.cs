@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+
 
 namespace HashSearchDwelling
 {
@@ -6,34 +8,54 @@ namespace HashSearchDwelling
     {
         public void MenuOptions()
         {
-            Console.WriteLine("Choose an Option: ");
-            Console.WriteLine("1) Search for a Dwelling.");
-            Console.WriteLine("2) Add a new Dwelling.");
-            Console.WriteLine("3) Delete an existing Dwelling.")
-            Console.WriteLine("Please enter 1, 2 or 3: ")
-            Console.ReadLine();
-            
-            try
+            int input;
+            string option = "";
+
+            do
             {
-                switch (input)
+                Console.Clear();
+                Console.WriteLine("Choose an Option: ");
+                Console.WriteLine("1) Search for a Dwelling.");
+                Console.WriteLine("2) Add a new Dwelling.");
+                Console.WriteLine("3) Delete an existing Dwelling.");
+                Console.WriteLine("Please enter 1, 2 or 3: ");
+                input = int.Parse(Console.ReadLine());
+
+                try
                 {
-                    case 1 : SearchDwelling()
-                    break;
-                    case 2 : AddNewDwelling()
-                    break;
-                    case 3 : DeleteDwelling()
-                    break;
-                    
-                    
+                    switch (input)
+                    {
+                        case 1:
+                            SearchDwelling.SearchDetails();
+                            break;
+                        case 2:
+                            AddDwelling.InputDetails();
+                        break;
+                        case 3:
+                            DeleteDwelling.DeleteDetails();
+                            break;
+
+                            
+
+
+                    }
                 }
-            } catch (ArgumentOutOfRangeException e) 
+                catch (ArgumentOutOfRangeException e)
                 {
                     Console.WriteLine("Invalid Option");
-                }  
+                }
+
+                Console.WriteLine("Would you like to go back to the Menu? Y/N");
+                option = Console.ReadLine();
+                option = option.ToUpper();
+
+            }
+            while (option != "N");
+
         }
-        
-    
+
+
     }
 
-    
+
 }

@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace HashSearchDwellings
+namespace HashSearchDwelling
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MainMenu mainMenu = new MainMenu ();
+            mainMenu.MenuOptions();
         }
     }
 }

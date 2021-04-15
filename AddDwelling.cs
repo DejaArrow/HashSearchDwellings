@@ -1,60 +1,72 @@
 using System;
+using System.Collections;
 
-namespace HashSearchDwellings
+namespace HashSearchDwelling
 {
-    class AddDwelling
-    {
-        Dwelling dwelling = new Dwelling (DwellingType, Identifier, PostCode, HouseholderName, Residents, SingleFloored);
-
-        public void InputDetails()
+    
+    public static class AddDwelling
+    {        
+        static DwellingFactory dwellingFactory = new DwellingFactory();
+        public static void InputDetails()
         { 
             Console.WriteLine("---Add New Dwelling---");
             Console.WriteLine("Select Dwelling Type: ");
             Console.WriteLine("1) House");
             Console.WriteLine("2) Flat");
             Console.WriteLine("3) Bungalow");
-            string DwellingType = Console.ReadLine();
+            int DwellingType = int.Parse(Console.ReadLine());
 
-            try
+            if (DwellingType == 1 || DwellingType == 2 || DwellingType == 3)
             {
-                switch (DwellingType)
+                Console.WriteLine("Enter Dwelling Identifier: ");
+                string Identifier = Console.ReadLine();
+
+                Console.WriteLine("Enter Dwelling PostCode: ");
+                string PostCode = Console.ReadLine();
+
+                Console.WriteLine("Enter HouseHolder Name: ");
+                string HouseholderName = Console.ReadLine();
+
+                Console.WriteLine("Enter number of Residents: ");
+                int Residents = int.Parse(Console.ReadLine());
+
+                try
                 {
-                    case 1 : DwellingType = "House";
-                    Console.WriteLine = "You selected House.";
-                    break;
-                    case 2 : DwellingType = "Flat";
-                    Console.WriteLine = "You selected Flat.";
-                    break;
-                    case 3 : DwellingType = "Bungalow";
-                    Console.WriteLine = "You selected Bungalow.";
-                    break;
-                    
-                    
+
+                    switch (DwellingType)
+                    {
+                        case 1:
+
+                            Console.WriteLine("Adding House.");
+                            DwellingTable.AddDwelling(dwellingFactory.CreateDwelling("House",PostCode, Identifier, HouseholderName, Residents));
+                            break;
+
+                        case 2:
+
+                            Console.WriteLine("Adding Flat.");
+                            DwellingTable.AddDwelling(dwellingFactory.CreateDwelling("Flat",PostCode, Identifier, HouseholderName, Residents));
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Adding Bungalow.");
+                            DwellingTable.AddDwelling(dwellingFactory.CreateDwelling("Bungalow",PostCode, Identifier, HouseholderName, Residents));
+                            break;
+
+                        default:
+                            Console.WriteLine("Invalid dwelling type");
+                            break;
+
+                    }
                 }
-            } catch (ArgumentOutOfRangeException e) 
+                catch (ArgumentOutOfRangeException e)
                 {
                     Console.WriteLine("Invalid Option");
-                }  
-            
-            Console.WriteLine("Enter Dwelling Identifier: ");
-            Identifier = Console.ReadLine();
+                }
 
-            Console.WriteLine("Enter Dwelling PostCode: ");
-            PostCode = Console.ReadLine();
-
-            Console.WriteLine("Enter HouseHolder Name: ")
-            HouseholderName = Console.ReadLine();
-
-            Console.WriteLine("Enter number of Residents: ")
-            Residents = Console.ReadLine();
-
-            Console.WriteLine("Is it single floored? Y/N ")
-            Console.ReadLine(input)
-            input == "Y" ? SingleFloored = true : SingleFloored = False;
-
-            DwellingTable.Add(dwelling.GetHashCode(), dwelling);
+            }
+        
                 
-
+          
 
 
         }
