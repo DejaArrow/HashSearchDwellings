@@ -8,6 +8,8 @@ namespace HashSearchDwelling
     {
         public static void SearchDetails()
         {
+        //searches table for dwellings.
+        
             Console.WriteLine("---Search for Dwelling ");
             Console.WriteLine("Type Postcode: ");
             string PostCode = Console.ReadLine();
@@ -15,13 +17,13 @@ namespace HashSearchDwelling
             string Identifier = Console.ReadLine();
 
             int key = (PostCode + Identifier).GetHashCode();
-           
+           //turns user input into a searchable code.
 
             if(DwellingTable.table.ContainsKey(key))
             {
                 ((Dwelling)DwellingTable.table[key]).Display();
-               
-                //If yes, SearchDetails(). If no, MainMenu();
+               //Displays the dwelling info attacked to the key.
+                
 
                 
             }

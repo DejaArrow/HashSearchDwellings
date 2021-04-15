@@ -5,6 +5,7 @@ namespace HashSearchDwelling
 {
     public static class DeleteDwelling
     {
+        //Deletes dwelling from table. 
         public static void  DeleteDetails()
         {
             Console.WriteLine("---Delete a Dwelling---");
@@ -14,7 +15,7 @@ namespace HashSearchDwelling
             string Identifier = Console.ReadLine();
 
             int key = (PostCode + Identifier).GetHashCode();
-           
+           //Gets key
 
             if(DwellingTable.table.ContainsKey(key))
             {
@@ -25,6 +26,7 @@ namespace HashSearchDwelling
                 if(option == "Y")
                 {
                     DwellingTable.table.Remove(key);
+                    //Deletes entry in table.
                 }
                
 

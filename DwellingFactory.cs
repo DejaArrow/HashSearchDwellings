@@ -5,6 +5,7 @@ namespace HashSearchDwelling
 {
   public class DwellingFactory
   {  
+    //Builds dwelling types.
     public Dwelling CreateDwelling(string type, string PostCode, string Identifier, string HouseholderName, int Residents)
     {
       type = type.ToLower();
@@ -60,7 +61,7 @@ namespace HashSearchDwelling
         }
 
         public void Display ()
-        {
+        {//Displays Dwelling information.
           
           Console.WriteLine($"Type: {this.DwellingType}");
           Console.WriteLine($"Postcode: {this.PostCode}");

@@ -20,7 +20,7 @@ namespace HashSearchDwelling
                 Console.WriteLine("3) Delete an existing Dwelling.");
                 Console.WriteLine("Please enter 1, 2 or 3: ");
                 input = int.Parse(Console.ReadLine());
-
+                //Gives user an option to choose.
                 try
                 {
                     switch (input)
@@ -48,9 +48,11 @@ namespace HashSearchDwelling
                 Console.WriteLine("Would you like to go back to the Menu? Y/N");
                 option = Console.ReadLine();
                 option = option.ToUpper();
+                //Sends user back to main menu.
 
             }
             while (option != "N");
+            //Loops until user enters 'n' and exits the program
 
         }
 

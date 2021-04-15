@@ -5,7 +5,8 @@ namespace HashSearchDwelling
 {
     
     public static class AddDwelling
-    {        
+    {
+    //Adds new dwelling from user input.         
         static DwellingFactory dwellingFactory = new DwellingFactory();
         public static void InputDetails()
         { 
@@ -40,6 +41,7 @@ namespace HashSearchDwelling
                             Console.WriteLine("Adding House.");
                             DwellingTable.AddDwelling(dwellingFactory.CreateDwelling("House",PostCode, Identifier, HouseholderName, Residents));
                             break;
+                            //Builds dwelling from Factory and adds to the table. 
 
                         case 2:
 
